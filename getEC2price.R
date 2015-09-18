@@ -30,3 +30,6 @@ for ( i_regions in 1:length(jsondata$config$regions))
 
 # 価格表 ( data.frame ) の作成
 priceDF <- data.frame(Reduce(rbind, pricelist))
+
+# 列名の追加
+names(priceDF) <- c("region", "type", "size", "name", "USD")
