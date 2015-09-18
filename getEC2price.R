@@ -30,18 +30,3 @@ for ( i_regions in 1:length(jsondata[[2]]$regions))
 
 # 価格表 ( data.frame ) の作成
 priceDF <- data.frame(Reduce(rbind, pricelist))
-
-# Memo
-# ====
-#   
-# リージョン (e.g. us-east, us-west-2, etc )数の確認
-# > length(jsondata[[2]]$regions)
-# [1] 8
-# 
-# インスタンスタイプ ( e.g. generalCurrentGen, generalPreviousGen, etc ) 数の確認
-# > length(jsondata[[2]]$regions[[1]]$instanceTypes)
-# [1] 9
-#
-# size ( e.g. m3.xlarge, m3.2xlarge, etc) 数の確認
-# インスタンスタイプによって数が異なる
-# > length(jsondata[[2]]$regions[[1]]$instanceTypes[[1]]$size)
