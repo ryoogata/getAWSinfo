@@ -7,13 +7,13 @@ require(rvest)
 # jsondata <- fromJSON(file = "https://aws.amazon.com/jp/ec2/pricing/pricing-on-demand-instances.json")
 
 # オンデマンド linux
-# jsondata <- fromJSON(file = "https://aws.amazon.com/jp/ec2/pricing/json/linux-od.json")
+jsondata <- fromJSON(file = "https://aws.amazon.com/jp/ec2/pricing/json/linux-od.json")
 
 # オンデマンド windows
-jsondata <- fromJSON(file = "https://aws.amazon.com/jp/ec2/pricing/json/mswin-od.json")
+#jsondata <- fromJSON(file = "https://aws.amazon.com/jp/ec2/pricing/json/mswin-od.json")
 
 # オンデマンド RedHat
-jsondata <- fromJSON(file = "https://aws.amazon.com/jp/ec2/pricing/json/rhel-od.json")
+#jsondata <- fromJSON(file = "https://aws.amazon.com/jp/ec2/pricing/json/rhel-od.json")
 
 # 空の list の作成
 pricelist <- list()
