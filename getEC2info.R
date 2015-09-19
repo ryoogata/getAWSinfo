@@ -70,6 +70,7 @@ table$"PhysicalProcessor"[table$"InstanceType" == "g2.2xlarge"] <- "Intel Xeon E
 # NetworkingPerformance と PhysicalProcessor 列を factor 化
 table$NetworkingPerformance <- factor(x = table$NetworkingPerformance, levels = c("Low to Moderate", "Moderate", "High" ,"10 Gigabit"))
 table$PhysicalProcessor <- factor(x = table$PhysicalProcessor, levels = c("Intel Xeon family","Intel Xeon E5-2666 v3","Intel Xeon E5-2670","Intel Xeon E5-2670 v2*","Intel Xeon E5-2670 v2","Intel Xeon E5-2676 v3","Intel Xeon E5-2680 v2"))
+table$InstanceSize <- factor( x = table$InstanceSize, levels = c("micro","small","medium","large","xlarge","2xlarge","4xlarge","8xlarge","10xlarge"))
 
 # ファイルの書き出し
 write.table(table, file="ec2list.csv", sep=",", row.names = FALSE)
