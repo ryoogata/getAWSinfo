@@ -43,3 +43,9 @@ priceDF <- data.frame(Reduce(rbind, pricelist))
 
 # 列名の追加
 names(priceDF) <- c("region", "type", "size", "name", "USD")
+
+# USD を numeric 型に変換
+priceDF$USD <- as.numeric(as.character(priceDF$USD))
+
+# size を character 型に変換
+priceDF$size <- as.character(priceDF$size)
