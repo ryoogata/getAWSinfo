@@ -67,10 +67,11 @@ names(table)[names(table) == "Enhanced Networking†"] <- "EnhancedNetworking"
 # CPU 表記が崩れた所を修正
 table$"PhysicalProcessor"[table$"InstanceType" == "g2.2xlarge"] <- "Intel Xeon E5-2670"
 
-# NetworkingPerformance と PhysicalProcessor 列を factor 化
+# 特定列を factor 化
 table$NetworkingPerformance <- factor(x = table$NetworkingPerformance, levels = c("Low to Moderate", "Moderate", "High" ,"10 Gigabit"))
 table$PhysicalProcessor <- factor(x = table$PhysicalProcessor, levels = c("Intel Xeon family","Intel Xeon E5-2666 v3","Intel Xeon E5-2670","Intel Xeon E5-2670 v2*","Intel Xeon E5-2670 v2","Intel Xeon E5-2676 v3","Intel Xeon E5-2680 v2"))
-table$InstanceSize <- factor( x = table$InstanceSize, levels = c("micro","small","medium","large","xlarge","2xlarge","4xlarge","8xlarge","10xlarge"))
+table$InstanceSize <- factor(x = table$InstanceSize, levels = c("micro","small","medium","large","xlarge","2xlarge","4xlarge","8xlarge","10xlarge"))
+table$InstanceType <- factor(x = table$InstanceType, levels = c("t2.micro","t2.small","t2.medium","t2.large","m3.medium","m3.large","m3.xlarge","m3.2xlarge","m4.large","m4.xlarge","m4.2xlarge","m4.4xlarge","m4.10xlarge","c3.large","c3.xlarge","c3.2xlarge","c3.4xlarge","c3.8xlarge","c4.large","c4.xlarge","c4.2xlarge","c4.4xlarge","c4.8xlarge","r3.large","r3.xlarge","r3.2xlarge","r3.4xlarge","r3.8xlarge","g2.2xlarge","g2.8xlarge","i2.xlarge","i2.2xlarge","i2.4xlarge","i2.8xlarge","d2.xlarge","d2.2xlarge","d2.4xlarge","d2.8xlarge"))
 
 # ファイルの書き出し
 write.table(table, file="ec2list.csv", sep=",", row.names = FALSE)
